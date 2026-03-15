@@ -1,0 +1,124 @@
+/* ── Google Fonts already loaded in public/index.html ── */
+
+/* ── CSS Variables ─────────────────────────────────────────────────────── */
+:root {
+  --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'DM Mono', 'Fira Code', monospace;
+  --sidebar-width: 252px;
+  --header-height: 62px;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Dark Theme ────────────────────────────────────────────────────────── */
+[data-theme='dark'] {
+  --bg-base:       #0c0c0f;
+  --bg-surface:    #131316;
+  --bg-elevated:   #18181c;
+  --bg-card:       #1c1c21;
+  --bg-hover:      #232328;
+  --bg-active:     #28282f;
+  --border:        #28282f;
+  --border-soft:   #202026;
+  --text-primary:  #f0eff4;
+  --text-secondary:#8e8ba0;
+  --text-muted:    #52505f;
+  --accent:        #6366f1;
+  --accent-light:  #818cf8;
+  --accent-dim:    rgba(99, 102, 241, 0.12);
+}
+
+/* ── Light Theme ───────────────────────────────────────────────────────── */
+[data-theme='light'] {
+  --bg-base:       #f2f1f8;
+  --bg-surface:    #ffffff;
+  --bg-elevated:   #f8f7fd;
+  --bg-card:       #ffffff;
+  --bg-hover:      #f0eff8;
+  --bg-active:     #e8e6f5;
+  --border:        #e2dff0;
+  --border-soft:   #eceaf8;
+  --text-primary:  #0e0c1a;
+  --text-secondary:#504d66;
+  --text-muted:    #8d8aa3;
+  --accent:        #5b58e8;
+  --accent-light:  #7472f0;
+  --accent-dim:    rgba(91, 88, 232, 0.10);
+}
+
+/* ── Reset ─────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-base);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input {
+  font-family: inherit;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ── Animations ────────────────────────────────────────────────────────── */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

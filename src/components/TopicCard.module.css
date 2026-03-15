@@ -1,0 +1,249 @@
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--transition), box-shadow var(--transition), opacity var(--transition);
+  overflow: hidden;
+}
+.card:hover {
+  border-color: var(--phase-color, var(--accent));
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--phase-color, var(--accent)) 18%, transparent);
+}
+.completed {
+  opacity: 0.68;
+}
+.completed:hover {
+  opacity: 1;
+}
+
+/* ── Header ───────────────────────────────────────── */
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 13px 15px;
+  cursor: pointer;
+}
+
+/* ── Checkbox ─────────────────────────────────────── */
+.checkWrap {
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+.checkbox {
+  width: 19px;
+  height: 19px;
+  border-radius: 5px;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+  cursor: pointer;
+  background: transparent;
+  flex-shrink: 0;
+}
+.checkbox:hover {
+  transform: scale(1.12);
+}
+.checked {
+  /* colors applied inline */
+}
+.checkmark {
+  font-size: 10px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ── Meta ─────────────────────────────────────────── */
+.meta {
+  flex: 1;
+  min-width: 0;
+}
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-bottom: 3px;
+}
+.title {
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+.titleDone {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+.description {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* ── Badges ───────────────────────────────────────── */
+.badges {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.tagNew {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+  background: #dcfce7;
+  color: #15803d;
+  letter-spacing: 0.04em;
+}
+.tagUpgraded {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+  background: #fef9c3;
+  color: #854d0e;
+}
+.levelBadge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 10px;
+}
+.hoursBadge {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  padding: 2px 6px;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-xs);
+}
+
+/* ── Expand button ────────────────────────────────── */
+.expandBtn {
+  font-size: 16px;
+  color: var(--text-muted);
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+.expandBtn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+.expandOpen {
+  transform: rotate(180deg);
+}
+
+/* ── Expanded panel ───────────────────────────────── */
+.expandedPanel {
+  border-top: 1px solid var(--border-soft);
+  padding: 12px 15px 15px 46px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: slideDown 0.18s ease;
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+.sectionLabel {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+/* ── Resources ────────────────────────────────────── */
+.resourceList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.resourceLink {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 9px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-soft);
+  background: var(--bg-elevated);
+  transition: all var(--transition);
+  text-decoration: none;
+}
+.resourceLink:hover {
+  border-color: var(--accent);
+  background: var(--bg-hover);
+  transform: translateX(3px);
+}
+.resourceBadge {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: var(--radius-xs);
+  flex-shrink: 0;
+  letter-spacing: 0.03em;
+}
+.resourceLabel {
+  font-size: 12px;
+  color: var(--text-secondary);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.resourceLink:hover .resourceLabel {
+  color: var(--text-primary);
+}
+.resourceArrow {
+  font-size: 11px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* ── Project box ──────────────────────────────────── */
+.projectBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 11px 13px;
+  border-radius: var(--radius-md);
+  border-left: 3px solid;
+}
+.projectIcon {
+  font-size: 13px;
+  flex-shrink: 0;
+  padding-top: 1px;
+}
+.projectText {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 600px) {
+  .expandedPanel {
+    padding-left: 14px;
+  }
+}

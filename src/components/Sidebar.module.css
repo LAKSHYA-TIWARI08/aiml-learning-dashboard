@@ -1,0 +1,154 @@
+.sidebar {
+  width: var(--sidebar-width);
+  min-height: 100vh;
+  height: 100vh;
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+  z-index: 40;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+  flex-shrink: 0;
+}
+
+/* ── Logo ─────────────────────────────────────────── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 16px 14px;
+  border-bottom: 1px solid var(--border-soft);
+  flex-shrink: 0;
+}
+.logoMark {
+  font-size: 22px;
+  color: var(--accent);
+  line-height: 1;
+}
+.logoText {
+  display: flex;
+  flex-direction: column;
+}
+.logoTitle {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+.logoSub {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+/* ── Nav ──────────────────────────────────────────── */
+.nav {
+  padding: 12px 8px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.navLabel {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0 8px;
+  margin-bottom: 3px;
+  display: block;
+}
+.navBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 7px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: var(--text-secondary);
+  transition: all var(--transition);
+  text-align: left;
+  margin-bottom: 1px;
+  cursor: pointer;
+}
+.navBtn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+.navBtn.active {
+  background: var(--bg-active);
+  color: var(--text-primary);
+  font-weight: 500;
+}
+.navIcon {
+  font-size: 14px;
+  width: 16px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.navContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+.navTitle {
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.navMeta {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+.navBadge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+/* ── Footer ───────────────────────────────────────── */
+.footer {
+  padding: 10px 16px;
+  border-top: 1px solid var(--border-soft);
+  flex-shrink: 0;
+}
+.footerText {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    min-height: unset;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .navLabel {
+    display: none;
+  }
+  .navBtn {
+    width: auto;
+    flex-shrink: 0;
+  }
+  .navMeta {
+    display: none;
+  }
+}

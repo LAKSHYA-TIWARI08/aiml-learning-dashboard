@@ -1,0 +1,129 @@
+.statsBar {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ── Overview cards ───────────────────────────────── */
+.overview {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.statCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 15px 18px;
+  min-width: 108px;
+}
+.accentCard {
+  border-color: var(--accent-dim);
+}
+.statValue {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--text-primary);
+}
+.statOf {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+.statPct {
+  font-size: 15px;
+  color: var(--accent);
+  font-weight: 500;
+}
+.statLabel {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Progress bar inside stat card */
+.progressTrack {
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  margin-top: 9px;
+  overflow: hidden;
+}
+.progressFill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.6s ease;
+}
+
+/* ── Phase grid ───────────────────────────────────── */
+.phaseGrid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+  min-width: 260px;
+}
+.phaseStat {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.phaseStatHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.phaseStatName {
+  font-size: 12px;
+  font-weight: 600;
+  flex: 1;
+}
+.phaseStatCount {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+.phaseStatPct {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  min-width: 30px;
+  text-align: right;
+}
+.phaseBarTrack {
+  height: 5px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.phaseBarFill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.6s ease;
+}
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 900px) {
+  .phaseGrid {
+    grid-template-columns: 1fr;
+  }
+  .overview {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 600px) {
+  .statsBar {
+    flex-direction: column;
+  }
+  .statCard {
+    min-width: 90px;
+    padding: 12px 14px;
+  }
+}
